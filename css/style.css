@@ -1,0 +1,163 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'PinkChicken';
+    overflow: hidden;
+}
+#main-content{
+    background-color: #E8E8E8;
+
+}
+img.gif {
+    width: 250px;
+}
+
+.box-d {
+    padding-top: 24vw;
+}
+
+.box-connect-.text-right {
+    position: absolute;
+    right: 3%;
+    top: 4%;
+}
+img.img-social {
+    width: 20;
+    width: 50px;
+    object-fit: cover;
+    height: 55px;
+}
+li{
+    list-style: none;
+}
+@font-face {
+    font-family: 'PinkChicken';
+    src: local("SourceCodePro"), url(../fonts/PinkChicken-Regular.ttf) format("truetype")
+}
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+
+.bg-black{
+    background: black;
+    height: 100%;
+}
+.box-top.p-2 {
+    margin-top: 20px;
+    justify-content: center;
+    text-align: center;
+    border: 4px solid #FF709B;
+
+
+}
+
+.code-boxxxx {  
+    width: 100%;  
+    border: 4px solid #FF709B;
+    background: url('../images/bg1.png') no-repeat center center; 
+    background-size: cover;  
+    opacity: 0.8; 
+    min-height: 100vh;
+    animation: changeBackground 9s infinite; 
+}  
+
+@keyframes changeBackground {  
+    0% {  
+        background: url('../images/bg1.png') no-repeat center center;  
+        background-size: cover;  
+    }  
+    33% {  
+        background: url('../images/bg2.png') no-repeat center center;  
+        background-size: cover;  
+    }  
+    66% {  
+        background: url('../images/bg3.png') no-repeat center center;  
+        background-size: cover;  
+    }  
+    100% {  
+        background: url('../images/bg1.png') no-repeat center center;  
+        background-size: cover;  
+    }  
+}
+section.box-code.container-fluid {
+    background: black;
+    position: relative;
+}
+
+.box-chat-gpt {
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+}
+
+.chat-messages {
+    flex-grow: 1;
+    padding: 10px;
+    background-color: transparent;
+    overflow-y: auto;
+    height: 550px;
+}
+
+.chat-messages .bot-message {
+    background-color: transparent;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    border-color: rgba(34, 197, 94, .3);
+    max-width: 100%;
+    border: 4px solid rgb(216 180 254);
+
+}
+
+.chat-messages .user-message {
+    background-color: transparent;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    max-width: 100%;
+    border-color: rgba(34, 211, 238, .5);
+    border: 4px solid red;
+
+    align-self: flex-end;
+}
+.user-message p{
+    color: orange;
+    font-weight: bold;
+
+
+}
+
+.bot-message p {
+    color: white;
+    font-weight: bold;
+    font-family: 'PinkChicken';
+}
+.chat-input {
+    display: flex;
+    border-top: 1px solid #ddd;
+    padding: 5px;
+    background-color: rgb(216 180 254);
+}
+
+.chat-input input {
+    flex-grow: 1;
+    border: none;
+    padding: 8px;
+    font-size: 14px;
+}
+
+.chat-input button {
+    padding: 8px 30px;
+    background-color: FF8EAF;
+    color: black;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.chat-input button:hover {
+    background-color: #0056b3;
+}

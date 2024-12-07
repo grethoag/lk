@@ -1,0 +1,208 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>I'M LUKA</title>
+    <link rel="icon" type="image" href="images/bg3.png">
+    <meta name="theme-color" content="#000000">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/bg3.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/bg3.png">
+    <link rel="stylesheet" href="fonts/PinkChicken-Regular.ttf">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/reponsit.css">
+
+    <link rel="stylesheet" href="css/aos.css">
+    <meta name="theme-color" content="#000000">
+    <meta content="images/bg3.png" property="og:image">
+    <meta name="description" content="Hello! My name is Megurine Luka (巡音ルカ). I am a virtual singer developed by Crypton Future Media. I sing in both Japanese and English, and my voice is provided by Yu Asakawa.">
+    <meta name="twitter:title" content=" Hello! My name is Megurine Luka (巡音ルカ). I am a virtual singer developed by Crypton Future Media.  I sing in both Japanese and English, and my voice is provided by Yu Asakawa.">
+</head>
+
+<body>
+    <section class="box-code container-fluid">
+        <div class="row pt-10">
+            <div class="col-lg-3 bg-black">
+                <div class="box-d">
+                    <img src="images/girl.gif" alt="" class="img-fluid img-girl">
+                  </div>
+            </div>
+            <div class="col-lg-6 code-boxxxx">
+                <div class="box-top p-2">
+                    <div class="box-social text-left">
+                        <ul class="social">
+                            <li class="item">
+                                <a href="https://x.com/megurineluka_AI" class="cosia" target="_blank">
+                                    <img src="images/prime_twitter.png" alt="" class="img-social">
+                                </a>
+                               
+                            </li>
+                        </ul>
+                    </div>
+                   <!--  <div class="box-connect- text-right">
+                        <img src="images/1.png" alt="" class="img-connect">
+                        <img src="images/2.png" alt="" class="img-connect">
+                    </div> -->
+                <!--     <button class="text-center" id="copyButton">  
+                        <span class="-trck-address">coming soon !</span>  
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-copy text-green-400/80">  
+                            <rect width="14" height="14" x="8" y="8" rx="2" ry="2"></rect>  
+                            <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path>  
+                        </svg>  
+                    </button>  --> 
+                </div>
+                <div class="box-h2 p-2">
+                    <img src="images/luke.png" alt="" class="img-luke">
+                </div>
+                <div class="box-chat-gpt">
+                    <div class="chat-messages" id="chatMessages">
+                        <div class="bot-message">
+                            <p>Welcome, I'm Lụka or Lucy for friends :3.</p>
+                            <p>How delightful to see you. What brings you here today?</p>
+                        </div>
+                    </div>
+
+                    <div class="chat-input">
+                        <input type="text" id="userInput" placeholder="Type your message here...">
+                        <button id="sendMessage">Send</button>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="col-lg-3 bg-black">
+               <div class="box-d">
+                 <img src="images/girl.gif" alt="" class="img-fluid img-girl">
+               </div>
+            </div>
+        </div>
+    </section>
+    <audio src="media/keywork.mp3" id="audio"></audio>
+
+<script src="js/jquery-3.6.0.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/aos.js"></script>
+<script src="js/slick.js"></script>
+
+<script>
+document.getElementById('copyButton').addEventListener('click', function() {  
+    // Select the text from the span element  
+    const textToCopy = document.querySelector('.-trck-address').textContent;  
+
+    // Create a temporary textarea element to hold the text  
+    const textarea = document.createElement('textarea');  
+    textarea.value = textToCopy;  
+    document.body.appendChild(textarea);  
+    
+    // Select the text inside the textarea  
+    textarea.select();  
+    textarea.setSelectionRange(0, 99999); // For mobile devices  
+
+    // Copy the text to the clipboard  
+    const successful = document.execCommand('copy');  
+
+    // Remove the temporary textarea  
+    document.body.removeChild(textarea);  
+
+    // Change the SVG icon if the copy was successful  
+    const svgElement = document.querySelector('.lucide-copy');  
+    if (successful) {  
+        // Change to a check mark SVG  
+        svgElement.innerHTML = '<path d="M2 12l5 5L22 4" stroke="currentColor" stroke-width="2" fill="none" />';  
+    }
+});  
+document.getElementById('sendMessage').addEventListener('click', sendMessage);
+document.getElementById('userInput').addEventListener('keypress', function (e) {
+    if (e.key === 'Enter') {
+        sendMessage();
+    }
+});
+
+function sendMessage() {
+    const userInput = document.getElementById('userInput');
+    const userMessage = userInput.value.trim().toLowerCase();
+
+    if (userMessage !== '') {
+        const chatMessages = document.getElementById('chatMessages');
+
+        // Add user's message
+        const userMessageElement = document.createElement('div');
+        userMessageElement.className = 'user-message';
+        userMessageElement.innerHTML = `<p>${userInput.value}</p>`;
+        chatMessages.appendChild(userMessageElement);
+
+        // Scroll to the bottom
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+
+        // Determine bot response
+        const randomResponses = [
+            "Megurine Luka (巡音ルカ) was released on January 30, 2009.",
+            "Luka's voice provider is Yu Asakawa, a Japanese voice actress.",
+            "She is bilingual, capable of singing in both Japanese and English.",
+            "Luka's design incorporates oceanic themes, symbolizing fluidity and versatility.",
+            "Her default vocal range is D3–D5, and her default tempo range is 65–145 BPM.",
+            "Her signature item is a tuna fish, often seen in fan art.",
+            "Luka was designed as a mature and elegant character.",
+            "She is widely loved for her soothing voice, particularly in ballads.",
+            "Luka's famous songs include 'Luka Luka★Night Fever' and 'Just Be Friends.'",
+            "Luka has inspired a wide range of merchandise, including figures and apparel.",
+        ];
+
+        let botResponse = "I didn't understand that. Can you try again?";
+        if (userMessage === 'hi' || userMessage === 'hello') {
+            botResponse = `
+                Hello! My name is Megurine Luka (巡音ルカ). I am a virtual singer developed by Crypton Future Media. 
+                I sing in both Japanese and English, and my voice is provided by Yu Asakawa. 
+                Released on January 30, 2009, I represent elegance and versatility. How can I assist you today?`;
+        } else {
+            // Randomize response
+            botResponse = randomResponses[Math.floor(Math.random() * randomResponses.length)];
+        }
+
+        // Add bot's response with typewriter effect
+        setTimeout(() => {
+            const botMessageElement = document.createElement('div');
+            botMessageElement.className = 'bot-message';
+            chatMessages.appendChild(botMessageElement);
+
+            // Call typewriter effect
+            typeWriter(botResponse, botMessageElement, chatMessages);
+        }, 500);
+
+        // Clear input
+        userInput.value = '';
+    }
+}
+
+function typeWriter(text, element, chatMessages) {
+    let i = 0;
+    element.innerHTML = '<p></p>';
+    const paragraph = element.querySelector('p');
+
+    function type() {
+        if (i < text.length) {
+            paragraph.innerHTML += text[i];
+            i++;
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+            setTimeout(type, 20);
+        }
+    }
+
+    type();
+}
+
+
+    // Initialize AOS
+    AOS.init();
+    $(document).ready(function () {
+        $('#meme').slick({
+            infinite: true,
+            slidesToShow: 4,
+            slidesToScroll: 4,
+            autoplay: true,
+            autoplaySpeed: 1000,
+            arrows: false,
+        });
+    });
+</script>
+
+</body></html>

@@ -1,0 +1,38 @@
+/* 27in */
+@media only screen and (min-width: 1920px) {
+ 
+}
+
+
+/* 24 in */
+
+@media only screen and (min-width: 1780px) {
+    .chat-messages {
+        height:540px;
+    }
+
+}
+
+
+
+@media only screen and (max-width: 1440px) {
+    .chat-messages {
+        height: 360px;
+    }
+    .box-d {
+        padding-top: 29vw;
+    }
+    
+
+}
+
+/* mobile */
+
+
+@media only screen and (max-width: 414px) {
+  
+}
+
+
+@media screen and (max-width: 768px) {
+  }
